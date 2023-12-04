@@ -93,4 +93,30 @@ addEventListener("DOMContentLoaded", function(){
         screen.innerHTML="Game over! Game over, man!";
         isGameOver=true;
     }
+
+    function checkForWin(){
+        let matches=0;
+        for(let i=0;i<tiles.length;i++){
+            if(tiles[i].classList.contains('flag') && tiles[i].classList.contains('bomb')){
+                matches++;
+            }
+            if(matches===bombAmount){
+                screen.innerHTML="Ad victotriam!";
+                isGameOver=true;
+            }
+        }
+    }
+
+    function checkTile(tile, currentId){
+        const isLeftEdge=(i%width===0);
+        const isRightEdge=(i%width===width-1); 
+        
+        setTimeout(function(){
+            if(currentId>0 && !isLeftEdge){
+                const newId=tiles[parseInt(currentId) +1 -width].id
+                const newTile=document.getElementById(newId);
+                click(newTile);
+            }    ///------------------We are here!!!
+        })
+    }
 })
