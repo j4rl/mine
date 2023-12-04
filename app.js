@@ -62,7 +62,7 @@ addEventListener("DOMContentLoaded", function(){
     createBoard();
 
      function click(){
-        
+
 
     }
 
@@ -78,6 +78,19 @@ addEventListener("DOMContentLoaded", function(){
                 tile.innerHTML="";
                 flags--;
             }
+            screen.innerHTML=flags+" flaggor av "+bombAmount;
         }
     } 
+
+    function gameOver(tile){
+        //visa alla bomber
+        tiles.forEach(tile =>{
+            if(tile.classList.contains('bomb')){
+                tile.innerHTML="💣";
+            }
+        })
+        tile.innerHTML="💥";
+        screen.innerHTML="Game over! Game over, man!";
+        isGameOver=true;
+    }
 })
