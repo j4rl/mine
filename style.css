@@ -1,0 +1,40 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.box{
+    display:flex;
+    flex-wrap: wrap;
+    width:500px;
+    height:500px;
+    background: lightgray;
+}
+.tile{
+    width:50px;
+    height:50px;
+    background: slategray;
+}
+.bomb{
+    background: red;
+}
+.clear{
+    background: green;
+}
+.screen{
+    width:calc(500px - 1rem);
+    font:bold 1.2rem sans-serif;
+    background: lightgray;
+    padding: 0.5rem;
+}
+.cen{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
