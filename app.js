@@ -117,6 +117,41 @@ addEventListener("DOMContentLoaded", function(){
                 const newTile=document.getElementById(newId);
                 click(newTile);
             }    ///------------------We are here!!!
-        })
+/*             if (currentId > 9 && !isRightEdge) {
+                const newId = squares[parseInt(currentId) +1 -width].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId > 10) {
+                const newId = squares[parseInt(currentId -width)].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId > 11 && !isLeftEdge) {
+                const newId = squares[parseInt(currentId) -1 -width].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId < 99 && !isRightEdge) {
+                const newId = squares[parseInt(currentId) +1].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId < 90 && !isLeftEdge) {
+                const newId = squares[parseInt(currentId) -1 +width].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId < 88 && !isRightEdge) {
+                const newId = squares[parseInt(currentId) +1 +width].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            }
+            if (currentId < 89) {
+                const newId = squares[parseInt(currentId) +width].id
+                const newTile = document.getElementById(newId)
+                click(newTile)
+            } */
+        },10);
     }
 })
