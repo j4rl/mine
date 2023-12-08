@@ -61,9 +61,24 @@ addEventListener("DOMContentLoaded", function(){
 
     createBoard();
 
-     function click(){
-
-
+    function click(tile){
+        let currentId=tile.id;
+        if(isGameOver) return;
+        if(tile.classList.contains('checked') || tile.classList.contains('flag')) return;
+        if(tile.classList.contains('bomb')){
+            gameOver(tile.id);
+        }else{
+            let total=tile.getAttribute('data');
+            if(total!=0){
+                tile.classList.add('checked');
+                tile.innerHTML=total;
+                return;
+            }
+            checkTile(tile,currentId);
+        }
+        tile.classList.add('checked');
+        //&&=AND ungefär *
+        //||=OR ungefär +
     }
 
     function addFlag(tile){
@@ -116,7 +131,7 @@ addEventListener("DOMContentLoaded", function(){
                 const newId=tiles[parseInt(currentId) +1 -width].id
                 const newTile=document.getElementById(newId);
                 click(newTile);
-            }    ///------------------We are here!!!
+            }    
             if (currentId > 9 && !isRightEdge) {
                 const newId = squares[parseInt(currentId) +1 -width].id
                 const newTile = document.getElementById(newId)
