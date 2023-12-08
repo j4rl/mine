@@ -17,15 +17,23 @@ body{
     background: lightgray;
 }
 .tile{
-    width:50px;
-    height:50px;
-    background: slategray;
+    width:44px;
+    height:44px;
+    background: lightgray;
+    border-style:outset;
+    border-width: 3px;
 }
 .bomb{
-    background: red;
+    
 }
 .clear{
-    background: green;
+    
+}
+.checked{
+    width:50px;
+    height:50px;
+    border-style: none !important;
+    background: rgb(197, 197, 197);
 }
 .screen{
     width:calc(500px - 1rem);
