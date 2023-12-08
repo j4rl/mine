@@ -2,7 +2,7 @@ addEventListener("DOMContentLoaded", function(){
     const box=document.querySelector(".box");
     const screen=document.querySelector(".screen");
     let width=10;
-    let bombAmount=10;
+    let bombAmount=30;
     let isGameOver=false;
     let tiles=[];
     let flags=0;
@@ -11,9 +11,9 @@ addEventListener("DOMContentLoaded", function(){
         let bombsArray=Array(bombAmount).fill('bomb');
         let emptyArray=Array(width*width-bombAmount).fill('clear');
         let gameArray=emptyArray.concat(bombsArray);
-        console.log(gameArray);
+        //console.log(gameArray);
         let shuffledArray=gameArray.sort(() => Math.random() -0.5);
-        console.log(shuffledArray);
+        //console.log(shuffledArray);
         for(let i=0;i<width*width;i++){
             const tile=document.createElement("div");
             tile.setAttribute("id", i);
@@ -172,6 +172,6 @@ addEventListener("DOMContentLoaded", function(){
     function main(){
         createBoard();
     }
-    
+
     main()
 })
