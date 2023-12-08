@@ -117,7 +117,7 @@ addEventListener("DOMContentLoaded", function(){
                 const newTile=document.getElementById(newId);
                 click(newTile);
             }    ///------------------We are here!!!
-/*             if (currentId > 9 && !isRightEdge) {
+            if (currentId > 9 && !isRightEdge) {
                 const newId = squares[parseInt(currentId) +1 -width].id
                 const newTile = document.getElementById(newId)
                 click(newTile)
@@ -151,7 +151,7 @@ addEventListener("DOMContentLoaded", function(){
                 const newId = squares[parseInt(currentId) +width].id
                 const newTile = document.getElementById(newId)
                 click(newTile)
-            } */
+            } 
         },10);
     }
 })
