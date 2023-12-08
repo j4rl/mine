@@ -59,14 +59,14 @@ addEventListener("DOMContentLoaded", function(){
     }
 
 
-    createBoard();
+    
 
     function click(tile){
         let currentId=tile.id;
         if(isGameOver) return;
         if(tile.classList.contains('checked') || tile.classList.contains('flag')) return;
         if(tile.classList.contains('bomb')){
-            gameOver(tile.id);
+            gameOver(tile);
         }else{
             let total=tile.getAttribute('data');
             if(total!=0){
@@ -77,8 +77,6 @@ addEventListener("DOMContentLoaded", function(){
             checkTile(currentId);
         }
         tile.classList.add('checked');
-        //&&=AND ungefär *
-        //||=OR ungefär +
     }
 
     function addFlag(tile){
@@ -104,7 +102,7 @@ addEventListener("DOMContentLoaded", function(){
             if(tile.classList.contains('bomb')){
                 tile.innerHTML="💣";
             }
-        })
+        });
         tile.innerHTML="💥";
         screen.innerHTML="Game over! Game over, man!";
         isGameOver=true;
@@ -117,7 +115,7 @@ addEventListener("DOMContentLoaded", function(){
                 matches++;
             }
             if(matches===bombAmount){
-                screen.innerHTML="Ad victotriam!";
+                screen.innerHTML="Ad victoriam!";
                 isGameOver=true;
             }
         }
@@ -170,4 +168,10 @@ addEventListener("DOMContentLoaded", function(){
             } 
         },10);
     }
+
+    function main(){
+        createBoard();
+    }
+    
+    main()
 })
